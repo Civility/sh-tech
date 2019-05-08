@@ -1,0 +1,59 @@
+/*articlesniokr*/
+.articles-niokr {
+	@extend %articles;
+
+	.readmore { 
+		@extend .h-auto;
+	}
+	.fields-container {
+		@extend .col-12;
+	}
+}
+/*blog_preview*/
+.articles-preview {
+	@extend %articles;
+	.sub-sobytia {
+		@extend %menu-sobytia;
+	}
+}
+/*archive default_items*/
+.articles-archive {
+	@extend %articles;
+	.sub-sobytia {
+		@extend %menu-sobytia;
+	}
+}
+/*blog_preview*/
+.articles-art {
+	@extend %articles;
+	.active {
+		@extend .d-flex;
+		@extend .pb-1;
+		@extend .border-bottom;
+		@extend .border-secondary;
+		.page-header { 
+			@extend .mb-3;
+			&:after {
+				@extend .d-block;
+				content:'';
+				height: 3px;
+				background-color: $primary;
+				@extend .mt-1;
+			}
+		}	
+	}
+}
+.list.list-group {
+	@extend .pl-3;
+}
+
+.gallery {
+	@extend .d-flex;
+	@extend .flex-wrap;
+	.gallery-fill {
+		@extend .flex-fill;
+	}
+}
+.formResponsive {
+	
+}

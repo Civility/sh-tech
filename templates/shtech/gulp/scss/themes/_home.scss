@@ -1,0 +1,78 @@
+// .home {
+// 	.showing {
+// 		display: none;
+// 		@include media-breakpoint-up(lg) {
+// 			display: block;
+// 		}	
+// 	}
+// }
+.slider {
+	background-image: url(/images/slider/sl_bg.png);
+	@extend %slider;
+	.row {
+		width: 100%;
+	}
+	.sl-text {
+		line-height: $line-height-big;
+		@extend .h4;
+		@extend .text-light;
+		p{
+			@extend .mb-0;
+		}
+	}
+	.page-header {
+		@extend .text-light;
+	}
+}
+.bg-slider {
+	background-color: rgba($dark, .5);
+}
+.imgslider {
+	background-image: url(/images/slider/sl_img.png);
+	@extend %slider;
+	@extend .p-0;
+	@extend .col;
+	@extend .col-lg-2;
+	@extend .d-none;
+	@extend .d-lg-block;
+}
+.showslider {
+	@extend .p-lg-0;
+	@extend .col;
+	@extend .col-lg-6;
+	.draggable {
+		background-color: rgba($dark, .5);
+		@extend .p-4;
+		min-height: 30vh;
+	}
+}
+.aside {
+	.row > div {
+		@extend .d-flex;
+		@extend .flex-column;
+	}
+	.card {
+		box-shadow: $box-shadow;
+		@extend .border-0;
+		@extend .h-100;
+		@extend .d-flex;
+		@extend .flex-column;
+	}
+	.img {
+		overflow: hidden;
+		height: 13rem;
+	}
+	.text {
+		@extend .flex-grow-1;
+		@extend .card-body;
+		line-height: $line-height-lg;
+		@extend .d-flex;
+		@extend .flex-column;
+		@extend .justify-content-between;
+	}
+	.more {
+		@extend .text-right;
+		@extend .pr-3;
+		@extend .pb-3;
+	}	
+}

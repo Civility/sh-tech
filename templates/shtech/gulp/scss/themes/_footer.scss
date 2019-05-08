@@ -1,0 +1,51 @@
+/* footer */
+.footer {
+	@extend .flex-grow-0;
+	@extend .bg-primary;
+	@extend .text-light;
+	.logo {
+		@extend .align-self-start;
+		img {@extend .p-0;}
+	}
+	.title {
+		@extend .text-light;
+	}
+	.copy {
+		@extend .align-self-start;
+	}
+	.navbar-nav {
+		li {
+			a {
+				@extend .text-light;
+				@extend .font-weight-normal;
+				@extend .text-left;
+				padding: 0.1rem 0;
+				@extend .d-inline-flex;
+				@include hover-focus {
+					color: $link-hover-color;
+				}
+			}
+		}
+	}
+	.contactus {
+		.phone, .mail {
+			@extend .my-3;
+			@extend .mx-0;
+			img {
+				@extend .mr-3;
+			}
+			a {
+				@extend .text-light;
+				@include hover-focus {
+					color: $link-hover-color;
+				}	
+			}
+			& > svg {
+				@extend .mr-3;
+			}
+			.cls-1 {
+				fill: $white;
+			}
+		}
+	}
+}

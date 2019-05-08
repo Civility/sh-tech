@@ -1,0 +1,63 @@
+
+.item-page-product{
+	.border-top{
+		padding-top: $list-group-item-padding-y / 2;
+	}
+	.table {
+		& * {
+			@extend .pl-0;
+			}
+		caption {
+			@extend .item-title;
+
+		}	
+		thead {
+			color: $table-head-color;
+			border-top:1px solid $table-head-color;
+			border-bottom:1px solid $table-head-color;
+		}
+	}
+}
+
+.lists {
+	& > .link {
+		border-bottom:  $list-group-border-width solid $primary;
+	}
+	& > .list {
+		.last {
+			border-bottom:  $list-group-border-width solid $list-group-border-color;
+		}
+	}
+}
+.tip {
+	.desc {
+		@extend .text-dark;
+	}
+	.list-prod {
+		& > .list-group-item {
+			border-bottom: $list-group-border-width solid $list-group-border-color;
+		}
+	}
+//loyouts/jooma/content/category_tip.php => com_content/category -> tip_children.php
+	.category-tip-children {
+/* 		& > .last {
+	border-bottom: $list-group-border-width solid $list-group-border-color;
+} */
+		& > .list-group-item {
+			@extend .border-0;
+			@extend .pb-0;		
+		}
+	}
+}
+//category -> tip_articles.php
+.catalog-list{
+	&.list-group-flush .list-group-item:last-child{
+		border-bottom: $list-group-border-width solid $list-group-border-color;
+	}
+}
+.tip-product {
+	.list-group-flush .list-group-item:last-child {
+		//border-bottom: $card-border-width solid $card-border-color;
+		border-bottom: $list-group-border-width solid $list-group-border-color;
+	}
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>SHTECH</name>
+	<version>3.1</version>
+	<creationDate>20.10.2018</creationDate>
+    <authorEmail>civilitys@gmail.com</authorEmail>
+    <copyright>© UTS 2008-2018, LLC. All rights reserved.</copyright>
+	<description>SHTECH for Joomla 3.9</description>
+	<files>
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>gulp</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>libs</folder>
+		<filename>favicon.ico</filename>
+		<filename>gulpfile.js</filename>
+		<filename>index.php</filename>			
+		<filename>offline.php</filename>
+		<filename>package.json</filename>
+		<filename>render.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<positions>
+		<position>menu-main</position>
+		<position>menu-catalog</position>
+		<position>breadcrumbs</position>
+		<position>search</position>
+		<position>contact</position>
+		<position>contactMail</position>
+		<position>show</position>
+		<position>events</position>
+		<position>aside</position>
+		<position>main</position>
+		<position>catalogs</position>
+		<position>mapsite</position>
+		<position>contactus</position>
+		<position>archive</position>
+		<position>menu-footer-catalog</position>
+		<position>debug</position>
+	</positions>
+</extension>

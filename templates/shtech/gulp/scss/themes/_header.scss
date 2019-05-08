@@ -1,0 +1,276 @@
+/* header */
+.header {
+	@extend .bg-white;
+	// background: linear-gradient(180deg, rgba($white,1) 70%, rgba($white,0) 100%);
+	// @include media-breakpoint-up(lg) {
+	// 	background-color: $white;
+	// }
+	& > .container {
+		padding: 0;
+		@include media-breakpoint-up(md) {
+			// @extend .px-0;
+			padding: 0 $grid-gutter-width / 2;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		.logo-home {
+			img {
+				padding:0.4rem;
+			}
+		}
+	}
+}
+.pos-a {
+	position: absolute;
+	top: 0;
+	left: -(($grid-gutter-width / 2));;
+	@include media-breakpoint-up(sm) { left: inherit;}
+	right: inherit;
+	z-index: 11;
+	padding-right: inherit;
+	@include media-breakpoint-up(sm) { padding-right: (($grid-gutter-width / 2));}
+	@extend .w-100;
+}
+
+.navbar-nav {
+	a {
+		@extend .font-weight-bold;
+	}
+}
+
+.navbar-brand {
+	@extend .bg-primary;
+	@extend .d-flex;
+	@extend .justify-content-center;
+	@extend .align-items-center;
+	padding: 0;
+	@include media-breakpoint-up(lg) { 
+		// height:7rem;
+		padding: 7px;
+	}
+	img {
+		padding: ($grid-gutter-width / 2);
+	}
+}
+
+.footer, .header {
+	a.navbar-brand {
+		@include hover-focus {
+			background-color: $primary !important;
+		}
+	}
+}
+.navbar-toggler-icon {
+	svg {
+		fill: $gray-500;
+		@include transition($transition-base);
+
+	}	
+}
+.navbar-light {
+	&[aria-expanded="false"] svg {
+		fill: $gray-500;
+		@include transition($transition-base);
+	}	
+	&[aria-expanded="true"] {
+		@include hover-focus-active {
+			svg {
+				fill: $danger;
+			}
+		}
+	}
+}
+.main-menu {
+	.menu {
+		@extend .text-center;
+		position: relative;
+		@include media-breakpoint-up(lg) {
+			& > li:not(:first-child):after {
+				content: '';
+				border-right: $border-width solid $navbar-light-color;
+    			height: $spacer;
+    			display: flex;
+    			position: absolute;
+    			top: 30%;
+    			width: auto;
+			}
+		}
+		@include media-breakpoint-down(md) {
+			li {
+				&:first-child {
+					border-top: 1px solid $secondary;
+				}
+				border-bottom: 1px solid $secondary;
+				background-color: $danger;
+				text-align: left;
+				&:hover, &:focus {
+					background-color: darken($danger, 0.5);
+				}
+				a {
+					padding: $grid-gutter-width / 2  $grid-gutter-width / 2 ;
+					color: $white;
+					@include hover {
+						color: $dark;
+					}
+				}
+			}
+		}
+		a {
+			color: rgba($black, .5);
+			@include hover { 
+				color: $danger;
+				@include transition($transition-base);
+			}
+		}
+	}
+
+}
+
+#catalogNavbar {
+	position: absolute;
+	background-color: rgba($gray-100, 0.9);
+	min-width: $oneColumn * 4 - $card-group-margin;
+	z-index: 10;
+	
+	&:before, &:after {
+		border-top: $spacer / 4 solid $danger;
+		content: "";
+		position: absolute;
+	}
+	&:before {
+		width: $oneColumn * 2;
+		top: 0;
+		right: 0;	
+	}
+	&:after {
+		width: $oneColumn * 2  - $card-group-margin;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+/*Start Menu Catalog*/	
+.menu-catalog {
+	@extend .d-block;
+	@extend .bg-white; 
+	@extend .text-center;
+	letter-spacing: -0.025em;
+	.navbar-text {
+		@extend .text-primary;
+		@include hover { @extend a; }
+		@extend .font-weight-bold;
+	}
+	.navbar-nav {
+		padding: $navbar-padding-x * 2 $navbar-padding-y * 5;
+		& > .nav-item {
+			@extend .mb-4;
+			&:last-child {
+				@extend .mb-0;
+			}
+		}
+		.check {
+			position: absolute;
+			left: -$navbar-padding-x * 2;
+			top: 0;
+		}
+		.dropdown-menu {
+			@extend .font-weight-bold;
+			@extend .offset-2;
+			li {
+				list-style-type: disc;
+				line-height: $line-height-lg;
+				a {
+					color: $gray-800;
+					@include hover-focus {
+						color: $navbar-light-hover-color;
+					}
+				}
+			}
+		}
+	}
+	.navbar-toggler {
+		.check:before {
+			color: rgba($gray-500,.7);
+		}
+		&[aria-expanded="true"] .check:before {
+			@extend .text-primary;
+		}
+	}
+	.navbar-nav {
+		li {	
+			[aria-expanded="true"] .check:before {
+				@extend .text-primary;
+			}	
+			[aria-expanded="false"] {
+				.check:before {
+					color: rgba($gray-500,.7);
+				}
+			}
+		}
+	}
+}
+
+.menu-main {
+	@extend .justify-content-end;
+	@extend .justify-content-lg-between;
+	@extend .px-0;
+	.navbar-toggler {
+		@extend .ml-3;
+		@extend .navbar-light;
+		@extend .col-auto; 
+		@extend .order-lg-2; 
+		@extend .order-2;
+		@extend .col-auto;
+	}
+	.slogan {
+		@extend .navbar-text; 
+		@extend .d-none;
+		@extend .d-lg-block;
+		@extend .col-auto;
+		font-size: $h2-font-size;
+		@extend .text-primary;
+		@extend .font-weight-bold;
+		font-family: 'Roboto Light', sans-serif;
+		@include media-breakpoint-up(xl) {
+			font-size: $h1-font-size;
+		}
+	}
+}
+.phone-mail {
+	// @extend .d-inline-flex;
+	// @extend .justify-content-end;
+	@extend .text-center;
+	@extend .col-3;
+	@extend .col-lg-2;
+	@extend .order-lg-3;
+	@extend .order-1;
+	& > * {
+		@extend .w-50;
+	}
+	.dropleft {
+		@extend .float-right;
+	}
+	.dropdown-menu {
+			width: 15rem;
+			max-width: 15rem;
+			@extend .position-absolute;
+			@extend .text-nowrap;
+			padding: 2.2rem 0;
+			top: -1.3rem;
+			right: 2rem;		
+		&.show {
+			
+			font-size: $h2-font-size;
+			@extend .bg-white;
+			@extend .d-flex;
+			@extend .justify-content-center;
+			@extend .align-items-center;
+			@extend .h-100;
+
+
+			@include media-breakpoint-up(lg) {
+				font-size: $h1-font-size;
+			}
+		}
+	}
+}
